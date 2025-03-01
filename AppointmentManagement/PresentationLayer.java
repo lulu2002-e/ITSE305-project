@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
-public class AppointmentPresentation {
+public class PresentationLayer {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
-        AppointmentDatabase database = new AppointmentDatabase();
-        AppointmentBus service = new AppointmentBus(database);
-         // Updated to use AppointmentBus
+        Database database = new Database();
+        BusinessLayer service = new BusinessLayer(database);
 
         while (true) {
             System.out.println("\n--- Appointment Management System ---");
@@ -47,7 +46,7 @@ public class AppointmentPresentation {
 
                     System.out.print("Enter New Time (HH:MM AM/PM): ");
                     String newTime = scanner.nextLine();
-                    
+
                     service.rescheduleAppointment(rescheduleId, newDate, newTime);
                 }
 

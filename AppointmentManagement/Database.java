@@ -1,26 +1,26 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppointmentDatabase {
+public class Database {
     //make it final
-    private final List<Appointment> appointments= new ArrayList<>();
+    private final List<DataLayer> appointments= new ArrayList<>();
 
-     public AppointmentDatabase() {
+     public Database() {
     }
 
     // Add an appointment
-    public void addAppointment(Appointment appointment) {
+    public void addAppointment(DataLayer appointment) {
         appointments.add(appointment);
     }
 
     // Get all appointments
-    public List<Appointment> getAppointments() {
+    public List< DataLayer> getAppointments() {
         return appointments;
     }
 
     // Find an appointment by ID
-    public Appointment findAppointmentById(int id) {
-        for (Appointment a : appointments) {
+    public  DataLayer findAppointmentById(int id) {
+        for ( DataLayer a : appointments) {
             if (a.getId() == id) {
                 return a;
             }
