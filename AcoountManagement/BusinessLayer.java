@@ -1,5 +1,5 @@
 public class BusinessLayer {
-    // Create an instance of DataLayer class
+    // using DataLayer class to interact with the data storage
     private DataLayer data = new DataLayer();
 
     // handle user registration
@@ -12,7 +12,7 @@ public class BusinessLayer {
         return data.loginUser(email, password);
     }
 
-    // handle edit profile
+    // handle profile editing and update the user's profile
     public boolean editProfile(String email, String newPassword) {
         return data.profileEdit(email, newPassword);
     }
