@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class PresentationLayer {
+public class PresentationLayer1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // Create an instance of BusinessLayer class
-        BusinessLayer service = new BusinessLayer();
+        BusinessLayer1 service = new BusinessLayer1();
 
         // Display the use case options to the user
         System.out.println("Choose a number from the following options:");

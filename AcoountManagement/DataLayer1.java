@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class DataLayer {
+public class DataLayer1 {
     // make a connection to the database
     private Connection connect() throws SQLException {
         return DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "password");

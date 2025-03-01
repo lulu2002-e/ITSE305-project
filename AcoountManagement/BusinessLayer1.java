@@ -1,6 +1,6 @@
-public class BusinessLayer {
+public class BusinessLayer1 {
     // using DataLayer class to interact with the data storage
-    private DataLayer data = new DataLayer();
+    private DataLayer1 data = new DataLayer1();
 
     // handle user registration
     public boolean register(String email, String password) {
