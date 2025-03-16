@@ -1,6 +1,10 @@
+
 import java.util.Scanner;
 
 public class PresentationLayer {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -21,7 +25,8 @@ public class PresentationLayer {
             scanner.nextLine(); // Consume newline
 
             switch (choice) {
-                case 1 -> {
+                case 1:
+                    // Booking appointment logic
                     System.out.print("Enter Doctor's Name: ");
                     String doctor = scanner.nextLine();
 
@@ -34,9 +39,10 @@ public class PresentationLayer {
                     System.out.print("Enter Patient's Name: ");
                     String patient = scanner.nextLine();
                     service.bookAppointment(doctor, date, time, patient);
-                }
+                    break;
 
-                case 2 -> {
+                case 2:
+                    // Rescheduling appointment logic
                     System.out.print("Enter Appointment ID to Reschedule: ");
                     int rescheduleId = scanner.nextInt();
                     scanner.nextLine();
@@ -48,24 +54,28 @@ public class PresentationLayer {
                     String newTime = scanner.nextLine();
 
                     service.rescheduleAppointment(rescheduleId, newDate, newTime);
-                }
+                    break;
 
-                case 3 -> {
+                case 3:
+                    // Canceling appointment logic
                     System.out.print("Enter Appointment ID to Cancel: ");
                     int cancelId = scanner.nextInt();
                     scanner.nextLine();
                     service.cancelAppointment(cancelId);
-                }
+                    break;
 
-                case 4 -> service.listAppointments();
+                case 4:
+                    // View all appointments logic
+                    service.listAppointments();
+                    break;
 
-                case 5 -> {
+                case 5:
                     System.out.println("Exiting... Thank you!");
                     scanner.close();
                     return;
-                }
 
-                default -> System.out.println("Invalid choice! Please try again.");
+                default:
+                    System.out.println("Invalid choice! Please try again.");
             }
         }
     }
