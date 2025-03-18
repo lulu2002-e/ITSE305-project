@@ -1,13 +1,17 @@
 import java.sql.*;
-
+// db connection tester nth important
 public class DataLayer1 {
-    // make a connection to the database
+    // make a database connection
     private Connection connect() throws SQLException {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("MySQL Driver not found!", e);
+        }
         return DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "password");
     }
-
+    
     // 3 boolean methods to ensure registration, login, and profile edit are successful
-
     public boolean registerUser(String email, String password) {
         String sql = "INSERT INTO users (email, password) VALUES (?, ?)";
         try (Connection conn = connect(); PreparedStatement stmt = conn.prepareStatement(sql)) {
