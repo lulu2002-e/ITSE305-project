@@ -8,18 +8,22 @@ public class DataLayer1 {
         } catch (ClassNotFoundException e) {
             throw new SQLException("MySQL Driver not found!", e);
         }
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "password");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "");
     }
     
     // 3 boolean methods to ensure registration, login, and profile edit are successful
     public boolean registerUser(String email, String password) {
         String sql = "INSERT INTO users (email, password) VALUES (?, ?)";
         try (Connection conn = connect(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            System.out.println("Attempting to register user: " + email);
+
             stmt.setString(1, email);
             stmt.setString(2, password);
+            
             // execute and return true if a row was inserted
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
+            System.out.println("Exception in registerUser: " + e.getMessage());
             e.printStackTrace();
             return false;
         }
