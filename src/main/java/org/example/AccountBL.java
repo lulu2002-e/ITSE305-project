@@ -1,6 +1,10 @@
 package org.example;
 public class AccountBL {
-    private AccountDL data = new AccountDL();
+    /**
+ * Handles data layer operations for user accounts.
+ */
+
+    private final AccountDL data = new AccountDL();
 
     // connect the 3 services to the data layer
     public boolean register(String email, String password) {
@@ -13,3 +17,5 @@ public class AccountBL {
         return data.profileEdit(email, newPassword);
     }
 }
+
+
