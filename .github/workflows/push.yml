@@ -1,5 +1,5 @@
 name: pushing to main branch
-
+#specified to main branch only
 on:
   push:
     branches:
