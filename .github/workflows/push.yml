@@ -1,25 +1,36 @@
-name: pushing to main branch
-#specified to main branch only
+name: Build and Push to Main
+
 on:
   push:
     branches:
       - main
 
 jobs:
-  deploy:
+  build_and_push:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Set Up Java
+      - name: Set Up Java Environment
         uses: actions/setup-java@v3
         with:
           java-version: 20
+          distribution: 'temurin'
 
-      - name: Build and Test
-        run: mvn install && mvn test
+      - name: Build with Maven
+        run: mvn install
 
-      - name: Deploy Application
-        run: ./deploy_script.sh
+      - name: Run Tests
+        run: mvn test
+
+      - name: Push Back to Main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Automated commit from GitHub Actions"
+          git push

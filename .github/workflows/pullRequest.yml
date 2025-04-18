@@ -1,4 +1,4 @@
-name: pull requests from main
+name: Java Maven Workflow
 
 on:
   pull_request:
@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 20
-          distribution: 'adopt'
+          distribution: 'temurin'
 
       - name: Cache Maven Dependencies
         uses: actions/cache@v3
