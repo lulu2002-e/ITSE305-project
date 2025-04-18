@@ -1,10 +1,13 @@
 package org.example;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-public class AccountBLTest {
-    private AccountBL BL;
+/**
+ * Unit tests for the AccountBL class.
+ */
+public final class AccountBLTest {
+    private AccountBL BL= new AccountBL();
 
     @Before
     public void setUp() {
@@ -29,3 +32,4 @@ public class AccountBLTest {
         assertTrue(BL.editProfile("edit@example.com", "newPass"));
     }
 }
+
