@@ -1,4 +1,4 @@
-name: Java Maven Workflow
+name: Pull request test
 
 on:
   pull_request:
