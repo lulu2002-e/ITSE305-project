@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class AccountPL {
   public static void main(String[] args) {
-    try (Scanner scanner = new Scanner(System.in)) {
-      AccountBL service = new AccountBL();
+    Scanner scanner = new Scanner(System.in);
+    AccountBL service = new AccountBL();
 
+    try {
       System.out.println("Choose a number from the following options:");
       System.out.println("1. Register\n2. Login\n3. Edit Profile");
       // store choice
@@ -60,6 +61,9 @@ public class AccountPL {
         }
         default -> System.out.println("Invalid Choice");
       }
+    } finally {
+      // Close the scanner when done to prevent resource leaks
+      scanner.close();
     }
   }
 }
