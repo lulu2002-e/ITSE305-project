@@ -1,11 +1,11 @@
 package org.example;
 
 import java.util.Scanner;
+//Remove the comment block above main(String[] args) unless you plan to describe the behavior in more detail.
+
 
 public class AppointmentPL {
-  /**
-   * @param args
-   */
+ 
   public static void main(String[] args) {
 
     Scanner scanner = new Scanner(System.in);

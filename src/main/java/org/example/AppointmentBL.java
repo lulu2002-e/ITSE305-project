@@ -1,7 +1,7 @@
 package org.example;
 
 import java.util.List;
-
+//Remove this duplicate 
 public class AppointmentBL {
   private final Database database;
 
@@ -9,12 +9,16 @@ public class AppointmentBL {
     this.database = database;
   }
 
+  //Add a blank line between each method 
+  
   // Book a new appointment
+
   public void bookAppointment(String doctor, String date, String time, String patient) {
     AppointmentDL newAppointment = new AppointmentDL(doctor, date, time, patient);
     database.addAppointment(newAppointment);
     System.out.println("Appointment booked successfully!");
   }
+
 
   // Reschedule an appointment
   public void rescheduleAppointment(int appointmentId, String newDate, String newTime) {
@@ -27,6 +31,7 @@ public class AppointmentBL {
     }
   }
 
+
   // Cancel an appointment
   public void cancelAppointment(int appointmentId) {
     AppointmentDL appointment = database.findAppointmentById(appointmentId);
@@ -37,6 +42,7 @@ public class AppointmentBL {
       System.out.println("Appointment not found.");
     }
   }
+
 
   // List all appointments
   public void listAppointments() {
@@ -60,3 +66,4 @@ public class AppointmentBL {
     }
   }
 }
+

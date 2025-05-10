@@ -8,6 +8,7 @@ public class AppointmentDL {
   private String time;
   private String patient;
 
+  //Keep only one declaration
   // Default constructor (needed for some cases)
   public AppointmentDL() {}
 
