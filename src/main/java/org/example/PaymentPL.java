@@ -11,6 +11,8 @@ public class PaymentPL {
 
         System.out.println("=== Clinic Payment System ===");
 
+        // TODO: Add simple try-catch to handle input errors
+        
         // Collect payment details from user
         System.out.print("Enter Patient ID: ");
         int patientId = scanner.nextInt();
@@ -22,6 +24,8 @@ public class PaymentPL {
 
         System.out.print("Enter Payment Method (Cash, Credit Card, Insurance): ");
         String method = scanner.nextLine();
+        
+        // TODO: Add confirmation message before processing payment
 
         // Process the payment
         Payment payment = PaymentBL.processPayment(patientId, amount, method);
@@ -35,6 +39,7 @@ public class PaymentPL {
             System.out.println("Date: " + payment.getPaymentDate());
         } else {
             System.out.println("Payment failed. Please try again.");
+            // TODO: Give more specific error message
         }
 
         scanner.close();

@@ -12,8 +12,11 @@ public class PaymentDL {
     /**
      * Saves a payment record in the system.
      * @param payment The payment to be stored.
+     * 
+     * TODO: Add null check before adding to database
      */
     public void savePayment(Payment payment) {
+        // TODO: Add simple null check here
         paymentDatabase.add(payment);
         System.out.println("Payment saved successfully.");
     }
@@ -39,4 +42,11 @@ public class PaymentDL {
         }
         return null;
     }
+
+    /**
+     * TODO: Add method to find payments by patient ID
+     * public List<Payment> getPaymentsByPatientId(int patientId) {
+     *     // Implementation here
+     * }
+     */
 }
