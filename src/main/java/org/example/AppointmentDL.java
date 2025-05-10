@@ -1,4 +1,5 @@
-public class  DataLayer {
+package org.example;
+public class  AppointmentDL {
     private static int counter = 1;
     private int id;
     private String doctor;
@@ -7,10 +8,10 @@ public class  DataLayer {
     private String patient;
     
     // Default constructor (needed for some cases)
-    public  DataLayer() {}
+    public  AppointmentDL() {}
 
     // Parameterized constructor
-    public  DataLayer(String doctor, String date, String time, String patient) {
+    public  AppointmentDL(String doctor, String date, String time, String patient) {
         this.id = counter++;
         this.doctor = doctor;
         this.date = date;
